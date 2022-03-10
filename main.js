@@ -2,7 +2,7 @@ createCells()
 const cells = document.querySelectorAll('.cell')
 let cellBoard = [...cells]
 const winner = document.getElementById('winner')
-let player = 'gold'
+let player = 'GOLD'
 
 // const canvas = document.getElementById('canvas')
 // const ctx = canvas.getContext('2d')
@@ -103,7 +103,7 @@ function cellFall(column) {
     const index = row * 7 + column
     const cell = cellBoard[index]
 
-    if(!cell.classList.contains('gold') && !cell.classList.contains('purple')) {
+    if(!cell.classList.contains('GOLD') && !cell.classList.contains('PURPLE')) {
       cell.classList.add(player)
       checkWinning(index)
       playerChange()
@@ -113,7 +113,7 @@ function cellFall(column) {
   } 
 
   function playerChange() {
-    player = player === 'gold' ? 'purple' : 'gold'
+    player = player === 'GOLD' ? 'PURPLE' : 'GOLD'
     // console.log(document.documentElement);
     let root = document.documentElement
     root.style.setProperty('--player', player)
@@ -134,7 +134,7 @@ function checkWinning(index) {
       cell4.classList.contains(player)
     )
     {
-      winner.textContent = `${player} win!`
+      winner.textContent = `${player} WIN!`
   }
 }
 } 

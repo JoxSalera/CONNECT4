@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
 
 * {
-    font-family: 'Montserrat', sans-serif;
-   
+    font-family: 'Rubik', sans-serif;
 }
 
 html {
@@ -10,9 +9,10 @@ html {
 }
 
 body {
-    background-image: url("./images/topo1.jpeg");
+    background-image: url(./images/topo1.jpeg);
+    background-size:cover;
     background-position: center;
-    padding-bottom: 8rem;
+    /* padding-bottom: 8rem; */
 }
 
 img {
@@ -34,9 +34,10 @@ h2 {
     color: azure;
 }
 
-.container {
+footer {
     display: flex;
     justify-content: center;
+    padding: 3rem;
 }
 
 .start-game {
@@ -45,12 +46,11 @@ h2 {
     grid-template-rows: repeat(1, 90px);
     row-gap: 1.2rem;
     column-gap: 0.9rem;
-    width: 700px;
-    height: 100px;
+    width: 43.75rem;
+    height: 6.25rem;
     justify-content: center;
     border-radius: 10%;
     margin: 0 auto;
-    padding-top: 1.5rem;
 }
 
 .cell-start {
@@ -63,12 +63,6 @@ h2 {
 
 .cell-start:hover {
     background-color: var(--player);
-    /* border-radius: 50%;
-    background: linear-gradient(145deg, #4d35a3, #5b3fc2);
-    box-shadow:  5px 5px 10px #2b1e5b,
-                 -5px -5px 10px #8059ff; */
-    /* outline: 4px solid black; */
-    /* border: 2px solid black; */
 }
 
 .grid {
@@ -81,13 +75,15 @@ h2 {
     height: 37.5rem;
     margin: 0 auto;
     justify-content: center;
-    background-color: rgb(112, 148, 112);
-    /* border-radius: 70px;
-    background: linear-gradient(145deg, #487643, #3c6339);
-    box-shadow:  5px 5px 10px #223720,
-                -5px -5px 10px #65a55f; */
+    background-color: #5d4257;
+    background-image: linear-gradient(315deg, #5d4257 0%, #a5c7b7 74%);
+    /* background-image: url(./images/green\ paint.jpeg);
+    background-size: contain; */
+    /* background-color: rgb(112, 148, 112); */
     border-radius: 10%;
-    padding: 3rem;
+    padding: 2rem;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 10px 10px 25px 10px #000000;
 }
 
 .cell {
@@ -97,16 +93,33 @@ h2 {
     border-radius: 100%;
 }
 
-/* .cell:hover {
-    background-color: rgb(100, 100, 100);
-} */
+.bounce {
+    animation: bounce 2s ease infinite;
+  }
+  @keyframes bounce {
+      70% { transform:translateY(0%); }
+      80% { transform:translateY(-15%); }
+      90% { transform:translateY(0%); }
+      95% { transform:translateY(-7%); }
+      97% { transform:translateY(0%); }
+      99% { transform:translateY(-3%); }
+      100% { transform:translateY(0); }
+  }
 
-.purple {
-    background-color: purple;
+.PURPLE {
+    background-color: #a4508b;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    /* background-color: purple; */
+    /* background-image: url(./images/fly-d-quABIXUIAiw-unsplash.jpeg);
+    background-size: cover; */
 }
 
-.gold {
-    background-color: gold;
+.GOLD {
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+    /* background-color: gold; */
+    /* background-image: url(./images/gold-background.jpeg);
+    background-size: cover; */
 }
 
 .playAgain button{
@@ -141,7 +154,9 @@ button {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
    }
-   
+
+ /* I got this from https://cssbuttons.io/ */
+
    button::after {
     pointer-events: none;
     content: "";
