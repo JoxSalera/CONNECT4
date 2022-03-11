@@ -2,10 +2,18 @@ createCells()
 const cells = document.querySelectorAll('.cell')
 let cellBoard = [...cells]
 const winner = document.getElementById('winner')
-let player = 'GOLD'
+let player = 'YELLOW'
 
-// const canvas = document.getElementById('canvas')
-// const ctx = canvas.getContext('2d')
+// const arrowsStart = document.querySelector('.cell-start')
+
+// window.addEventListener('keydown', move)
+
+// function move(e) {
+//   if (e.keyCode == 37) {
+//   }
+//   else if (e.keyCode == 39){
+//   }
+// }
 
 const winningArrays = [
   [0, 1, 2, 3],
@@ -84,6 +92,7 @@ const winningArrays = [
 //   for(let i = 0; i < 7; i++) {
 //     const newRowStart = document.createElement('div')
 //     newRowStart.classList.add('cell')
+//     newRowStart.setAttribute('i', i)
 //     rowStart.appendChild(newRowStart)
 //   }
 // }
@@ -103,7 +112,7 @@ function cellFall(column) {
     const index = row * 7 + column
     const cell = cellBoard[index]
 
-    if(!cell.classList.contains('GOLD') && !cell.classList.contains('PURPLE')) {
+    if(!cell.classList.contains('YELLOW') && !cell.classList.contains('PURPLE')) {
       cell.classList.add(player)
       checkWinning(index)
       playerChange()
@@ -113,7 +122,7 @@ function cellFall(column) {
   } 
 
   function playerChange() {
-    player = player === 'GOLD' ? 'PURPLE' : 'GOLD'
+    player = player === 'YELLOW' ? 'PURPLE' : 'YELLOW'
     // console.log(document.documentElement);
     let root = document.documentElement
     root.style.setProperty('--player', player)
@@ -134,33 +143,31 @@ function checkWinning(index) {
       cell4.classList.contains(player)
     )
     {
-      winner.textContent = `${player} WIN!`
+      const result = winner.textContent = `${player} WINS!`
+   }
   }
-}
 } 
 
-// for (let i = Math.max(index%7, 0); i < Math.min(7 - index%7, 4); i++) {
-//   const fourCells = cellBoard.slice(index - i, index - 1 + 4)
-//   console.log("checking", fourCells)
-//   if (fourCells[0].classList.contains(player) && fourCells[1].classList.contains(player) && fourCells[2].classList.contains(player) && fourCells[3].classList.contains(player)){
-//     console.log('You win!');
-//   }
-// }
-
 function selectAll(i) {
-  console.log('Hello', cellFall, i);
+  // console.log('Hello', cellFall, i);
   cellFall(i)
 }
 
 function newGame() {
-  // console.log(document.querySelectorAll('.cell-start'))
   const select = document.querySelectorAll('.cell-start')
-  console.log("document", document)
-  console.log("select", select)
+  // console.log("document", document)
+  // console.log("select", select)
 
   select.forEach((cellStartEL, i) => {
     cellStartEL.addEventListener('click', () => selectAll(i))
   })
 }
-
 newGame()
+
+
+
+// const simpson = ['Homer', 'Lisa', 'Bart', 'Maggie', 'Marge']
+// let randomSimpson = simpson[Math.floor(Math.random() * simpson.length)]
+
+
+

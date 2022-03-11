@@ -1,6 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
 
-* {
+ * {
     font-family: 'Rubik', sans-serif;
 }
 
@@ -10,44 +11,47 @@ html {
 
 body {
     background-image: url(./images/topo1.jpeg);
-    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 112.5rem;
     background-position: center;
-    /* padding-bottom: 8rem; */
+    font-family: 'Rubik', sans-serif;
 }
 
-img {
-    max-width: 100%;
-}
 
 h1 {
     display: flex;
     justify-content: center;
     color: white;
-    margin: 1.1rem;
-    font-size: 5rem;
+    margin: 0.2rem;
+    font-size: 4rem;
     text-shadow: 0px 0px 20px #F090FF;
 }
+
 
 h2 {
     display: flex;
     justify-content: center;
     color: azure;
-}
+    font-size: 3rem;
+} 
 
-footer {
-    display: flex;
-    justify-content: center;
-    padding: 3rem;
+#icon {
+    width: 2.813rem;
+    height: 2.813rem;
+    cursor: pointer;
+    padding-top: 0.85rem;
+    text-shadow: 0px 0px 20px #F090FF;
 }
 
 .start-game {
     display: grid;
-    grid-template-columns: repeat(7, 90px);
-    grid-template-rows: repeat(1, 90px);
-    row-gap: 1.2rem;
-    column-gap: 0.9rem;
-    width: 43.75rem;
-    height: 6.25rem;
+    grid-template-columns: repeat(7, 70px);
+    grid-template-rows: repeat(1, 70px);
+    row-gap: 5px;
+    column-gap: 5px;
+    width: 550px;
+    height: 75px;
     justify-content: center;
     border-radius: 10%;
     margin: 0 auto;
@@ -67,18 +71,15 @@ footer {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(7, 80px);
-    /* grid-template-rows: repeat(6, 75px); */
-    row-gap: 1.5rem;
-    column-gap: 1.5rem;
-    width: 43.75rem;
-    height: 37.5rem;
+    grid-template-columns: repeat(7, 70px);
+    row-gap: 5px;
+    column-gap: 5px;
+    width: 550px;
+    height: 450px;
     margin: 0 auto;
     justify-content: center;
     background-color: #5d4257;
     background-image: linear-gradient(315deg, #5d4257 0%, #a5c7b7 74%);
-    /* background-image: url(./images/green\ paint.jpeg);
-    background-size: contain; */
     /* background-color: rgb(112, 148, 112); */
     border-radius: 10%;
     padding: 2rem;
@@ -88,38 +89,24 @@ footer {
 
 .cell {
     border: 1px solid black;
-    /* outline: 2px solid black; */
     background-color: black;
     border-radius: 100%;
 }
 
-.bounce {
-    animation: bounce 2s ease infinite;
-  }
-  @keyframes bounce {
-      70% { transform:translateY(0%); }
-      80% { transform:translateY(-15%); }
-      90% { transform:translateY(0%); }
-      95% { transform:translateY(-7%); }
-      97% { transform:translateY(0%); }
-      99% { transform:translateY(-3%); }
-      100% { transform:translateY(0); }
-  }
-
 .PURPLE {
     background-color: #a4508b;
     background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
-    /* background-color: purple; */
-    /* background-image: url(./images/fly-d-quABIXUIAiw-unsplash.jpeg);
-    background-size: cover; */
 }
 
-.GOLD {
+.YELLOW {
     background-color: #fbb034;
     background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
-    /* background-color: gold; */
-    /* background-image: url(./images/gold-background.jpeg);
-    background-size: cover; */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
 }
 
 .playAgain button{
@@ -129,6 +116,8 @@ footer {
     color: white;
     border-radius: 30%;
 }
+
+/* I got this from https://cssbuttons.io/ */
 
 button {
     --glow-color: rgb(217, 176, 255);
@@ -154,8 +143,6 @@ button {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
    }
-
- /* I got this from https://cssbuttons.io/ */
 
    button::after {
     pointer-events: none;

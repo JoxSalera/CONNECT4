@@ -9,7 +9,7 @@
     <link rel="icon" href="./images/C4.png" type="image/x-icon">
   </head>
   <body>
-    <h1>CONNECT4</h1>
+    <h1>C<img src="./images/icons8-circled-play-50.png" id="icon">NNECT4</h1>
     <h2 id="winner"></h2>
         <div class="start-game">
           <div class="cell-start"></div>
@@ -21,14 +21,26 @@
           <div class="cell-start"></div>
         </div>
         <div class="grid"></div>
-        <!-- <div id="arrows-gaming">
-          <canvas id="canvas" width="500" height="700"></canvas>
-        </div> -->
        <script src="./main.js"></script>
+      <audio id="song">
+        <source src="./audio/minimalminimaltechno-mix-2019-cartoon-high-trip.mp3" type="audio/mp3">
+      </audio>
+      <script>
+        const song = document.getElementById('song')
+        const icon = document.getElementById('icon')
+
+        icon.onclick = function (){
+          if(song.paused){
+            song.play()
+              icon.src = "./images/icons8-pause-button-50.png"
+          }else{
+              song.pause()
+              icon.src = "./images/icons8-circled-play-50.png"
+            }
+          }
+      </script>
   </body>
   <footer>
-    <!-- <div class="container"> -->
-      <a href="." class="playAgain"><button>PLAY AGAIN</button></a>
-    <!-- </div> -->
+    <a href="." class="playAgain"><button>PLAY AGAIN</button></a>
   </footer>
 </html>
